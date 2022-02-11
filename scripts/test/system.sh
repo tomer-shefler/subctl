@@ -42,8 +42,8 @@ function test_subctl_gather() {
         with_context "${cluster}" validate_gathered_files
     done
 
-    # Broker
-    with_context "$broker" validate_broker_resources
+    # Broker (on the first cluster)
+    with_context "${clusters[0]}" validate_broker_resources "${clusters[0]}"
     echo "::endgroup::"
 }
 
